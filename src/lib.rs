@@ -131,7 +131,8 @@ fn send_email(config: &Config, html: &str) {
     }
 }
 
-pub async fn entrypoint(config: Config) {
+pub async fn entrypoint(arg: &str) {
+    let config: Config = load_env_variables();
     match get_daily_question_data().await {
         Ok(question_data) => {
             let html = format_html(question_data);
@@ -143,3 +144,4 @@ pub async fn entrypoint(config: Config) {
         }
     }
 }
+
