@@ -7,4 +7,4 @@
 *.rlib 
 *.rmeta 
 .DS_Store
-
+.env
