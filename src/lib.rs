@@ -85,7 +85,7 @@ fn format_html(question: QuestionData) -> String {
                 </div>
 
                 <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-                    <a href="https://leetcode.com{}" style="display: inline-block; width: 200px; height: 50px; line-height: 50px; text-align: center; text-decoration: none; background-color: #ffa116; border-radius: 10px; font-size: 20px; color: black; border: 2px solid #ffa116;>
+                    <a href="https://leetcode.com{}" style="display: inline-block; width: 200px; height: 50px; line-height: 50px; text-align: center; text-decoration: none; background-color: #ffa116; border-radius: 10px; font-size: 20px; color: black; border: 2px solid #ffa116;">
                         Go to question
                     </a>
                 </div>
@@ -131,7 +131,7 @@ fn send_email(config: &Config, html: &str) {
     }
 }
 
-pub async fn entrypoint(arg: &str) {
+pub async fn entrypoint() {
     let config: Config = load_env_variables();
     match get_daily_question_data().await {
         Ok(question_data) => {
