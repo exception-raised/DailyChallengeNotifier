@@ -10,7 +10,7 @@ async fn main() -> Result<(), JobSchedulerError> {
     let job = JobBuilder::new()
         .with_timezone(chrono_tz::UTC)
         .with_cron_job_type()
-        .with_schedule("0 0 * * * *")
+        .with_schedule("0 0 0 * * *")
         .unwrap()
         .with_run_async(Box::new(|uuid, mut l| {
             Box::pin(async move {
@@ -19,7 +19,7 @@ async fn main() -> Result<(), JobSchedulerError> {
                 let next_tick = l.next_tick_for_job(uuid).await;
                 match next_tick {
                     Ok(Some(ts)) => println!("Main job next tick: {:?}", ts),
-                    _ => println!("Could not get next tick for 2s job"),
+                    _ => println!("Could not get next tick for main job"),
                 }
             })
         }))
