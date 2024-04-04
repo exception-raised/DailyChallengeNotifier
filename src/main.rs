@@ -29,8 +29,8 @@ async fn main() -> Result<(), JobSchedulerError> {
     sched.add(job).await?;
 
     sched.start().await?;
-
-    tokio::time::sleep(Duration::from_secs(100)).await;
-
-    Ok(())
+    
+    loop {
+        tokio::time::sleep(Duration::from_secs(100)).await;
+    }
 }
