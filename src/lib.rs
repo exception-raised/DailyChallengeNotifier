@@ -145,3 +145,29 @@ pub async fn entrypoint() {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_get_color_based_on_difficulty() {
+        let test_cases = vec![
+            ("Hard", "red"),
+            ("Medium", "yellow"),
+            ("Easy", "green"),
+        ];
+
+        for (difficulty, expected_color) in test_cases {
+            let color = get_color_based_on_difficulty(&difficulty.to_string());
+            assert_eq!(
+                color, 
+                expected_color,
+                "Expected color for difficulty '{}' to be '{}', but got '{}'",
+                difficulty,
+                expected_color,
+                color
+            );
+        }
+    }
+
+}
