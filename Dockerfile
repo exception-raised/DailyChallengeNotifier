@@ -1,7 +1,9 @@
-FROM rust:latest
+FROM rust:1.70
 
 WORKDIR /usr/src/app
 COPY . .
+
+RUN cargo test
 
 RUN cargo build --release
 
