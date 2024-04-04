@@ -10,7 +10,7 @@ async fn main() -> Result<(), JobSchedulerError> {
     let job = JobBuilder::new()
         .with_timezone(chrono_tz::UTC)
         .with_cron_job_type()
-        .with_schedule("0 0 0 * * *")
+        .with_schedule("@daily")
         .unwrap()
         .with_run_async(Box::new(|uuid, mut l| {
             Box::pin(async move {
