@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   leetcode_daily_notifier:
     build:
