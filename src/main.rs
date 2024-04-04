@@ -33,3 +33,8 @@ async fn main() -> Result<(), JobSchedulerError> {
         tokio::time::sleep(Duration::from_secs(100)).await;
     }
 }
+
+#[test]
+fn test(){
+    println!("this is a test")
+}
