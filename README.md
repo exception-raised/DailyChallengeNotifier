@@ -40,9 +40,8 @@ Don't wanna use Docker? That's fine!
    ```
 3. Run the program manually:
    ```bash
-     ./target/release/daily_challenge_notifier
-  ```
-
+   ./target/release/daily_challenge_notifier
+   ```
 You will know the program is successfully up and running if you see Welcome to Leetcode Daily Challenge Notifier.
 
 ## Troubleshooting
