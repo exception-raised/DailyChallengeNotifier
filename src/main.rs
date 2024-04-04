@@ -8,7 +8,6 @@ async fn main() -> Result<(), JobSchedulerError> {
     let sched = JobScheduler::new().await?;
 
     let job = JobBuilder::new()
-        .with_timezone(chrono_tz::UTC)
         .with_cron_job_type()
         .with_schedule("@daily")
         .unwrap()
